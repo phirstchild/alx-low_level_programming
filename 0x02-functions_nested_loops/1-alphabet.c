@@ -3,6 +3,7 @@
 /**
 * print_alphabets - entry point
 */
+
 void print_alphabet(void)
 {
 char c = 'a';
