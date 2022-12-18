@@ -1,4 +1,20 @@
 #include "main.h"
-#include <stdio.h>
+
 /**
- * _isdigit - 
+ * _isdigit - prints a digit
+ * @c: parameter
+ * Return: 1 if successful, 0 otherwise
+ */
+
+int _isdigit(int c);
+
+{
+	int (c >= 48 && c < 58)
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+}
