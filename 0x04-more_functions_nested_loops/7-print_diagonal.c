@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * print_diagonal - prints splash
- * @n: parameter
+ * print_diagonal - print slash
+ * @n: params
  */
 
 void print_diagonal(int n)
@@ -12,27 +12,18 @@ void print_diagonal(int n)
 
 	if (n > 0)
 	{
-		_putchar('\n');
-	} else
-	{
 		for (; i < n; i++)
 		{
-			for (j = 0; j < 1; j++)
+			for (j = 0; j < i; j++)
 			{
-				if (j == i)
-
-					_putchar('\\');
-
-				else if (j < i)
-					_putchar(' ');
-
+				_putchar(' ');
 			}
-
+			_putchar(92);
 			_putchar('\n');
 		}
 	}
-	
-
-
+	else
+	{
+		_putchar('\n');
+	}
 }
-
