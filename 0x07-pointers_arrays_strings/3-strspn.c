@@ -1,36 +1,35 @@
 #include "main.h"
 /**
- * _strspn - a function that gets the
- *           length of a prexif substring
- *
- * @s: pointer to string input
- * @accept: substring prefix to look for
- *
- * Return: the number of bytes in the initial segment
+* _strspn - return length of string that matches values consistently
+* @s: string to search
+* @accept: target matches
+* Return: number of bytes consecutively matched
 */
 
 unsigned int _strspn(char *s, char *accept)
 {
-	int i, j, f;
+	int i = 0, j;
+	int matches = 0;
 
-	i = 0;
-	while (s[i] != '\0')
+	while (s[i] != '\0') /*iterate through string*/
 	{
-		j = 0;
-		f = 1; /*flag status*/
-		while (accept[j] != '\0')
+
+		for (j = 0; accept[j] != '\0'; j++) /*iterate through target*/
 		{
-			if (s[i] == accept[j])
+			if (s[i] == accept[j]) /*record & break at first match*/
 			{
-				f = 0; /*success*/
+				matches++;
 				break;
 			}
-			j++;
+
+			if (accept[j + 1] == '\0' && s[i] != accept[j])
+
+			return (matches);/*return if idx doesn't match*/
 		}
-		if (f == 1)
-			break;
+
 		i++;
 	}
 
-	return (i);
+	return (matches); /* return num if all match till end */
+
 }
