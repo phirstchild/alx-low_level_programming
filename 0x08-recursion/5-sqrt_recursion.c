@@ -9,7 +9,7 @@ int helper(int a, int b)
 {
 	if (b * b > a)
 		return (-1);
-9 
+
 	else if (b * b == a)
 		return (b);
 
