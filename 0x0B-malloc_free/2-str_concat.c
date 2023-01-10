@@ -57,8 +57,8 @@ char *str_concat(char *s1, char *s2)
 		*(dest + i) = *(s1 + i);
 
 	for (j = 0; *(s2 + j) != '\0'; j++)
-		*(dest + i) = *(s2 + j);
 	{
+		*(dest + i) = *(s2 + j);
 		i++;
 	}
 
