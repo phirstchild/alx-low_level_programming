@@ -1,6 +1,6 @@
-#inclde "main.h"
+#include "main.h"
 /**
- * alloc_grid - allocates a grid, makes space and free space 
+ * alloc_grid - allocates a grid, makes space and free space
  * @width: width of the grid
  * @height: height of the grid
  * Return: greed with free spaces
@@ -11,7 +11,7 @@ int **alloc_grid(int width, int height)
 	/* declare variables */
 
 	int **grid;
-	int i , j;
+	int i, j;
 
 	if (width <= 0 || height <= 0)
 	{
@@ -40,7 +40,7 @@ int **alloc_grid(int width, int height)
 			return (NULL);
 		}
 	}
-	for ( i = 0; j < width; j++)
+	for (i = 0; j < width; j++)
 	grid[i][j] = 0;
 	return (grid);
 }
