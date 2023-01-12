@@ -1,5 +1,3 @@
-nes (132 sloc)  2.44 KB
-
 #include <stdio.h>
 #include "main.h"
 #include <stdlib.h>
