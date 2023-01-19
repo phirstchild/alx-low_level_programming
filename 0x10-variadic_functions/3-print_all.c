@@ -19,7 +19,7 @@ void print_all(const char * const format, ...)
 		{
 			if (format[i] == t_arg[j] && k)
 			{
-				printf(",");
+				printf(", ");
 				break;
 			} j++;
 		}
