@@ -48,7 +48,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
 	shash_node_t *new, *tmp;
 	char *value_copy;
-	unsigned long int ratio;
+	unsigned long int q_index;
 
 	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
 		return (0);
@@ -57,7 +57,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	if (value_copy == NULL)
 		return (0);
 
-	ratio = key_ratio((const unsigned char *)key, ht->size);
+	q_index = key_index((const unsigned char *)key, ht->size);
 	tmp = ht->shead;
 	while (tmp)
 	{
@@ -84,8 +84,8 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		return (0);
 	}
 	new->value = value_copy;
-	new->next = ht->array[ratio];
-	ht->array[ratio] = new;
+	new->next = ht->array[q_index];
+	ht->array[q_index] = new;
 
 	if (ht->shead == NULL)
 	{
@@ -130,13 +130,13 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
 	shash_node_t *node;
-	unsigned long int ratio;
+	unsigned long int q_index;
 
 	if (ht == NULL || key == NULL || *key == '\0')
 		return (NULL);
 
-	ratio = key_ratio((const unsigned char *)key, ht->size);
-	if (ratio >= ht->size)
+	q_index = key_index((const unsigned char *)key, ht->size);
+	if (q_index >= ht->size)
 		return (NULL);
 
 	node = ht->shead;
